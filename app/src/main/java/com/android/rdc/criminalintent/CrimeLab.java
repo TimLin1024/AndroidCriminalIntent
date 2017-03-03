@@ -40,6 +40,13 @@ public class CrimeLab implements Serializable {
         return sCrimeLab;
     }
 
+    public void deleteCrime(UUID crimeID){
+        if (crimeID == null){
+            return;
+        }
+        mCrimes.remove(getCrime(crimeID));
+    }
+
     public Crime getCrime(UUID id) {
         for (Crime crime : mCrimes) {
             if (crime.getId().equals(id)) {
